@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Galaxy_Wars.Vehicles
 {
-    class Santa
+    class Santa : VehicleType
     {
+        //number of condensators onboard
+        public int condensator { get; set; }
+
+        public override void Fly()
+        {
+            Console.Write("Santa is flying!");
+        }
+
+        public Santa()
+        {
+            condensator = 0;
+        }
     }
 }
