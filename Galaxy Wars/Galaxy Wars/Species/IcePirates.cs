@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Galaxy_Wars.Species
 {
-    class IcePirates : Species, IWarMonger
+    class IcePirates : SpeciesClass, IWarMonger
     {
         public double aggressionMultiplier { get; set; }
         public string alignment { get; set; }
         public string type { get; set; }
         public int vanquishedEars { get; set; }
 
-        public void Berserker(Species Enemy)
+        public void Berserker(SpeciesClass Enemy)
         {
             Enemy.population -= 10000;
             this.population -= 2500;
@@ -30,7 +30,7 @@ namespace Galaxy_Wars.Species
             this.hasEyePatch = true;
             this.foundTreasure = false;
             this.vanquishedEars = 0;
-            this.type = "Warmonger";
+            this.type = "WarMonger";
         }
     }
 }

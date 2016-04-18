@@ -45,11 +45,16 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Species\Hydrologists.cs" />
     <Compile Include="Species\IcePirates.cs" />
+    <Compile Include="Species\Interfaces\IReligion.cs" />
     <Compile Include="Species\Interfaces\IScience.cs" />
     <Compile Include="Species\Interfaces\IWarMonger.cs" />
-    <Compile Include="Species\Species.cs" />
+    <Compile Include="Species\Parched.cs" />
+    <Compile Include="Species\SpeciesClass.cs" />
+    <Compile Include="Vehicles\Maria.cs" />
     <Compile Include="Vehicles\Nina.cs" />
+    <Compile Include="Vehicles\Pinta.cs" />
     <Compile Include="Vehicles\Santa.cs" />
     <Compile Include="Vehicles\VehicleType.cs" />
   </ItemGroup>
