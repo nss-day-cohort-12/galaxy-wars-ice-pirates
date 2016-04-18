@@ -8,9 +8,9 @@ namespace Galaxy_Wars.Species
 {
     interface IReligion
     {
-        string type { get; set; }
-        void Convert(Species Enemy);
-        void Indoctrine(Species Enemy);
+
+        void Convert(SpeciesClass Enemy);
+        void Indoctrine(SpeciesClass Enemy);
         string commandment { get; set; }
         double zealotMultiplier { get; set; }
     }

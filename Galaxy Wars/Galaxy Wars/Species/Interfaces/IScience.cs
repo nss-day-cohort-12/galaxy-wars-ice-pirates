@@ -10,7 +10,7 @@ namespace Galaxy_Wars.Species
     {
         double intelligenceMultiplier { get; set; }
         void Clone();
-        string type { get; set; }
+        
         string alignment { get; set; }
         void Clone(int growth);
     }

@@ -7,10 +7,11 @@ using Galaxy_Wars.Vehicles;
 
 namespace Galaxy_Wars.Species
 {
-    class Species
+    class SpeciesClass
     {
-        private int _population;
+        private double _population;
         private string _name;
+        public string type;
         private string _solarSystem;
 
         private VehicleType _vehicleType;
@@ -27,7 +28,7 @@ namespace Galaxy_Wars.Species
             }
         }
 
-        public int population
+        public double population
         {
             get
             {
@@ -39,7 +40,7 @@ namespace Galaxy_Wars.Species
             }
         }
 
-        public Species()
+        public SpeciesClass()
         {
             //starting population of 1 million
             this.population = 1000000;

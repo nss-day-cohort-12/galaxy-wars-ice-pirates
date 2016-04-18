@@ -8,8 +8,8 @@ namespace Galaxy_Wars.Species
 {
     interface IWarMonger
     {
-        void Berserker(Species Enemy);
-        string type { get; set; }
+        void Berserker(SpeciesClass Enemy);
+        
         string alignment { get; set; }
         int vanquishedEars { get; set; }
         double aggressionMultiplier { get; set; }

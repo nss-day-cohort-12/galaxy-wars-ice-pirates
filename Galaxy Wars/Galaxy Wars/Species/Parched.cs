@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Galaxy_Wars.Species
 {
-    class Parched : Species, IReligion
+    class Parched : SpeciesClass, IReligion
     {
 
         public string type { get; set; }
-        public string commandment { get; set}
+        public string commandment { get; set; }
         public double zealotMultiplier { get; set; }
 
-        public void Convert(Species Enemy)
+        public void Convert(SpeciesClass Enemy)
         {
 
         }
 
-        public void Indoctrine(Species Enemy)
+        public void Indoctrine(SpeciesClass Enemy)
         {
 
         }
@@ -31,7 +31,7 @@ namespace Galaxy_Wars.Species
 
         public Parched()
         {
-            this.type = "Religious";
+            this.type = "Religion";
             this.commandment = "Giveth the water, for your soul to be cleansed";
             this.blind = true;
             this.thirsty = true;
