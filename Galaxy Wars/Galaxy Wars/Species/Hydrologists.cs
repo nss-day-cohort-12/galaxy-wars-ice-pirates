@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Galaxy_Wars.Species
 {
-    class Hydrologists: Species 
+    class Hydrologists: Species, IScience 
     {
         public bool pHD { get; set; }
         public bool athletic { get; set; }
@@ -14,7 +14,7 @@ namespace Galaxy_Wars.Species
         public bool hasTechnology { get; set; }
         public int significant { get; set; }
 
-        public void clone (Species Enemy)
+        public void Clone ()
         {
             this.population += 5000;
         }
@@ -22,11 +22,9 @@ namespace Galaxy_Wars.Species
         public string alignment { get; set; }
         public string type { get; set; }
 
-        public void replenish (Species Enemy)
+        public void Clone(int growth)
         {
-            this.population += 10000;
-            Enemy.population -= 1000;
+            this.population += growth;
         }
-
     }
 }

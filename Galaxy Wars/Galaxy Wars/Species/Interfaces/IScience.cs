@@ -12,6 +12,6 @@ namespace Galaxy_Wars.Species
         void Clone();
         string type { get; set; }
         string alignment { get; set; }
-        void Clone(double growth);
+        void Clone(int growth);
     }
 }
