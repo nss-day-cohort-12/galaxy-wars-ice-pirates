@@ -34,17 +34,19 @@ namespace Galaxy_Wars
 
             int year = 1;
             bool allAlive = true;
+            var random = new Random();
 
 
             while (allAlive)
             {
-                Hydrologists.population -= 20000;
-                IcePirates.population -= 20000;
-                Parched.population -= 20000;
 
-                if (year % 25 == 0)
+                Hydrologists.population -= random.Next(13000, 17000);
+                IcePirates.population -= random.Next(13000, 17000);
+                Parched.population -=  random.Next(13000, 17000);
+                
+
+                if (year % 10 == 0)
                 {
-                    var random = new Random();
                     var idx = random.Next(0, 2);
                     rules[idx] = !rules[idx];
                 }
@@ -136,12 +138,13 @@ namespace Galaxy_Wars
 
 
                 //ISpaceFaring species will recover a bonus of 5,000 population after each year.
-                Hydrologists.Clone();
+                var growth = random.Next(3000, 7000);
+                Hydrologists.Clone(growth);
 
                 //IReligious species convert 1% of the opponent's current population to their side each year.
-                Parched.population += 0.01 * (Hydrologists.population + IcePirates.population);
-                Hydrologists.population *= 0.99;
-                IcePirates.population *= 0.99;
+                Parched.population += 0.005 * (Hydrologists.population + IcePirates.population);
+                Hydrologists.population *= 0.995;
+                IcePirates.population *= 0.995;
 
                 Console.WriteLine("The Year is {0}", year);
                 Console.WriteLine("Hydrologists: {0}", Hydrologists.population);
