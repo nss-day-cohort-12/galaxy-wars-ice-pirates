@@ -21,7 +21,6 @@ namespace Galaxy_Wars
             Hydrologists Hydrologists = new Hydrologists();
             Santa Santa = new Santa();
             Hydrologists.vehicleType = Santa;
-            Console.WriteLine("Hydrologist type " + Hydrologists.type);
 
             IcePirates IcePirates = new IcePirates();
             Nina Nina = new Nina();
@@ -47,7 +46,6 @@ namespace Galaxy_Wars
                 {
                     var random = new Random();
                     var idx = random.Next(0, 2);
-                    Console.WriteLine("idx" + idx);
                     rules[idx] = !rules[idx];
                 }
                 Console.WriteLine(rules[0]);
@@ -57,12 +55,26 @@ namespace Galaxy_Wars
                 //Science fights Religion 
                 if (rules[0])
                 {
-                    Console.WriteLine("rule is true");
                     Parched.population *= 0.98;
                 }
                 else
                 {
                     Hydrologists.population *= 0.98;
+                }
+                //Death Checks
+                if (Hydrologists.population <= 0)
+                {
+                    Console.Write("Hydrologists have died.");
+                    Console.ReadKey();
+                    allAlive = false;
+                    continue;
+                }
+                if (Parched.population <= 0)
+                {
+                    Console.Write("Parched have died.");
+                    Console.ReadKey();
+                    allAlive = false;
+                    continue;
                 }
 
                 //Religion fights WarMongers
@@ -77,38 +89,7 @@ namespace Galaxy_Wars
                 //IWarrior species will kill an additional 10,000 of the opponent's population each year, but also lose an additional 2,500 population each year.
                 Parched.population -= 10000;
                 IcePirates.population -= 2500;
-
-                //WarMongers fight Science
-                if (rules[2])
-                {
-                    Hydrologists.population *= 0.98;
-                }
-                else
-                {
-                    IcePirates.population *= 0.98;
-                }
-                //IWarrior species will kill an additional 10,000 of the opponent's population each year, but also lose an additional 2,500 population each year.
-                Hydrologists.population -= 10000;
-                IcePirates.population -= 2500;
-
-
-
                 //Death Checks
-                if ( Hydrologists.population <= 0)
-                {
-                    Console.Write("hydrologists have died.");
-                    Console.ReadKey();
-                    allAlive = false;
-                    continue;
-                }
-                if (Parched.population <= 0)
-                {
-                    Console.Write("Parched have died.");
-                    Console.ReadKey();
-                    allAlive = false;
-                    continue;
-                }
-
                 if (Parched.population <= 0)
                 {
                     Console.Write("Parched have died.");
@@ -124,7 +105,20 @@ namespace Galaxy_Wars
                     continue;
                 }
 
-                
+
+                //WarMongers fight Science
+                if (rules[2])
+                {
+                    Hydrologists.population *= 0.98;
+                }
+                else
+                {
+                    IcePirates.population *= 0.98;
+                }
+                //IWarrior species will kill an additional 10,000 of the opponent's population each year, but also lose an additional 2,500 population each year.
+                Hydrologists.population -= 10000;
+                IcePirates.population -= 2500;
+                //Death Checks
                 if (IcePirates.population <= 0)
                 {
                     Console.Write("Ice Pirates have died.");
